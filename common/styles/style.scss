@@ -1,0 +1,781 @@
+@charset "UTF-8";
+@import "_reset";
+@import "_mixin";
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  background-color: $mainBack;
+  background-image: url(../img/background-paper.png);
+  z-index: 10;
+  letter-spacing: 0.1rem;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+.sp_br {
+  display: none;
+}
+
+#about {
+  padding: 10vw 10vw;
+  background-image: url(../img/background-paper2.png);
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: -10;
+
+  .texts {
+    display: block;
+
+    h1 {
+      font-size: 4vw;
+    }
+
+    p {
+
+      margin-top: 5vw;
+      font-weight: 800;
+      font-size: 1.7vw;
+      white-space: nowrap;
+    }
+  }
+
+  div {
+    .eat_illustration {
+
+      img {
+        width: 45vw;
+        border-radius: 64% 36% 58% 42% / 55% 45% 55% 45%;
+        border: max(0.2rem, 0.3vw) solid black;
+
+
+      }
+    }
+  }
+}
+
+#steamHeating {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+
+  .subTitle {
+    position: relative;
+    width: 40vw;
+    margin-left: 15vw;
+    padding-bottom: 25vw;
+    margin: 10vw 0 10vw 15vw;
+
+    div {
+      h1 {
+        font-size: 3.5vw;
+        margin-bottom: -0.5vw;
+      }
+
+      span {
+        background: black;
+        display: block;
+        height: max(0.3rem, 0.6vw);
+        border-radius: 100vw;
+        width: 21.4vw;
+      }
+    }
+
+    p {
+      display: block;
+      text-align: left;
+      font-size: 1.5vw;
+      margin-top: 1vw;
+      font-weight: bold;
+    }
+
+    .steam {
+      position: absolute;
+      top: 50%;
+      left: -25%;
+      width: 100vw;
+      transform: scale(155%);
+      border-radius: 2vw;
+      border: max(0.2rem, 0.3vw) solid black;
+    }
+
+    .steamToast {
+      position: absolute;
+      top: -1vw;
+      left: 130%;
+      object-fit: cover;
+      width: 23vw;
+      height: 40vw;
+      border: max(0.2rem, 0.3vw) solid black;
+      border-radius: 100vw;
+    }
+
+  }
+}
+
+#recipeList {
+  width: 100vw;
+  background-image: url(../img/background-paper2.png);
+  text-align: center;
+  padding-top: 0vw;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+
+  .wrapper {
+    margin-top: 5vw;
+
+    .recipe_decorationTitleR {
+      position: absolute;
+      top: 25%;
+      right: 2%;
+      width: 7%;
+      transform: rotate(180deg);
+      -webkit-text-stroke: 1px black;
+      color: rgba(0, 0, 0, 0.1);
+      display: block;
+      margin-right: 2rem;
+      z-index: 99;
+    }
+
+    .recipe_decorationTitleL {
+      position: absolute;
+      top: 25%;
+      left: 3.5%;
+      width: 7%;
+      -webkit-text-stroke: 1px black;
+      color: rgba(0, 0, 0, 0.1);
+      display: block;
+      margin-right: 2rem;
+      z-index: 99;
+    }
+
+
+    .subtitles {
+      height: 10vw;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: max(15rem, 15vw);
+      margin: 0 auto;
+
+      .subtitle {
+        font-weight: bold;
+        font-size: max(2rem, 5vw);
+      }
+
+      .underline_japanese {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        display: flex;
+        margin-top: max(-2rem, -1.5vw);
+
+        .underline {
+          background-color: black;
+          width: 100%;
+          height: max(0.3rem, 0.5vw);
+          border-radius: 100vw;
+          display: block;
+        }
+
+        .japanese {
+          font-size: max(1rem, 1.5vw);
+          font-weight: bold;
+          white-space: nowrap;
+          margin: auto max(0.5rem, 0.5vw);
+          width: 100%;
+        }
+      }
+
+
+    }
+
+  }
+
+  a .allRecipe {
+    position: absolute;
+    bottom: 7vw;
+    right: 21.5vw;
+    width: 10vw;
+    z-index: 100;
+    transition: 0.2s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+}
+
+/*==================================================
+     スライダーのためのcss
+     ===================================*/
+.slider {
+  /*横幅94%で左右に余白を持たせて中央寄せ*/
+  width: 100vw;
+  margin: 0 auto 5vw;
+
+  a {
+    height: 100vw;
+    color: black;
+    text-decoration: none;
+    font-size: 2vw;
+    font-weight: bold;
+    margin-top: 2vw;
+  }
+}
+
+.slider img {
+  margin-top: 1vw;
+  margin-bottom: 0.5vw;
+  width: 23vw;
+  /*スライダー内の画像を60vwにしてレスポンシブ化*/
+  height: auto;
+  border-radius: 5vw 5vw 1vw 1vw;
+  border: max(0.2rem, 0.3vw) solid black;
+}
+
+.slider .slick-slide {
+  transform: scale(0.8);
+  /*左右の画像のサイズを80%に*/
+  transition: all .5s;
+  /*拡大や透過のアニメーションを0.5秒で行う*/
+  opacity: 0.5;
+  /*透過50%*/
+}
+
+.slider .slick-slide.slick-center {
+  transform: scale(1);
+  /*中央の画像のサイズだけ等倍に*/
+  opacity: 1;
+  /*透過なし*/
+}
+
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev,
+.slick-next {
+  position: absolute;
+  /*絶対配置にする*/
+  top: 42%;
+  cursor: pointer;
+  /*マウスカーソルを指マークに*/
+  outline: none;
+  /*クリックをしたら出てくる枠線を消す*/
+  border-top: 0.4vw solid black;
+  /*矢印の色*/
+  border-right: 0.4vw solid black;
+  /*矢印の色*/
+  height: 2vw;
+  width: 2vw;
+
+  margin: 0 16.3vw;
+}
+
+.slick-prev {
+  /*戻る矢印の位置と形状*/
+  left: -1.5%;
+  transform: rotate(-135deg);
+  z-index: 999;
+}
+
+.slick-next {
+  /*次へ矢印の位置と形状*/
+  right: -1.5%;
+  transform: rotate(45deg);
+  z-index: 999;
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+  text-align: center;
+  margin: 2vw 0 0 0;
+}
+
+.slick-dots li {
+  display: inline-block;
+  margin: 0 max(0.3rem, 0.3vw);
+}
+
+.slick-dots button {
+  color: transparent;
+  outline: none;
+  width: max(0.5rem, 0.5vw);
+  /*ドットボタンのサイズ*/
+  height: max(0.5rem, 0.5vw);
+  /*ドットボタンのサイズ*/
+  display: block;
+  border-radius: 50%;
+  background: #ccc;
+  /*ドットボタンの色*/
+
+  border: 0.1rem solid black;
+}
+
+.slick-dots .slick-active button {
+  background: #333;
+  /*ドットボタンの現在地表示の色*/
+}
+
+
+.design {
+  overflow-x: hidden;
+
+  .wrapper {
+    width: 100vw;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 7vw;
+    margin: 15vw 0;
+
+    .decorationTitleTop {
+      position: absolute;
+      top: -12vw;
+      left: 0vw;
+      width: 100vw;
+      overflow: hidden;
+      white-space: nowrap;
+
+      ul {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        animation: hscroll2 200s linear infinite;
+
+        li {
+          display: inline-block;
+          font-size: 9vw;
+          font-weight: bold;
+          -webkit-text-stroke: 1px black;
+          color: rgba(0, 0, 0, 0.1);
+          padding: 0 1vw;
+        }
+      }
+    }
+
+    .decorationTitleBottom {
+      position: absolute;
+      bottom: -13vw;
+      left: 0vw;
+      width: 100vw;
+      overflow: hidden;
+      white-space: nowrap;
+
+      ul {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        animation: hscroll2 200s linear infinite;
+
+        li {
+          display: inline-block;
+          font-size: 9vw;
+          font-weight: bold;
+          -webkit-text-stroke: 1px black;
+          color: rgba(0, 0, 0, 0.1);
+          padding: 0 1vw;
+        }
+      }
+    }
+
+    @keyframes hscroll2 {
+      0% {
+        transform: translateX(4vw);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .subtitles {
+      height: 10vw;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: max(15rem, 15vw);
+      margin: 0 auto;
+
+      .subtitle {
+        font-weight: bold;
+        font-size: 5vw;
+      }
+
+      .underline_japanese {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        display: flex;
+        margin-top: max(-2rem, -1.5vw);
+
+        .underline {
+          background-color: black;
+          width: 100%;
+          height: max(0.3rem, 0.5vw);
+          border-radius: 100vw;
+          display: block;
+        }
+
+        .japanese {
+          font-size: max(1rem, 1.5vw);
+          font-weight: bold;
+          white-space: nowrap;
+          margin: auto max(0.5rem, 0.5vw);
+          width: 100%;
+        }
+      }
+
+      p {
+        margin: 0 0.5vw;
+        white-space: nowrap;
+      }
+    }
+
+    p {
+      display: block;
+      text-align: left;
+      font-size: 1.5vw;
+      margin-top: 1vw;
+      font-weight: bold;
+      width: 30vw;
+    }
+
+
+    .design_slide {
+      margin-left: 1vw;
+      width: 50%;
+      height: auto;
+      z-index: 100;
+
+      /*画像の横幅を100%にしてレスポンシブ化*/
+      img {
+        width: 100%;
+        height: auto;
+        vertical-align: bottom;
+        border: max(0.2rem, 0.3vw) solid black;
+        border-radius: 2vw;
+        /*画像の下にできる余白を削除*/
+      }
+
+      /*メイン画像下に余白をつける*/
+      .gallery {
+        margin: 0 0 0.3vw 0;
+      }
+
+      .gallery li {
+        list-style: none;
+      }
+
+      /*矢印の設定*/
+
+      /*戻る、次へ矢印の位置*/
+      .slick-prev,
+      .slick-next {
+        position: absolute;
+        /*絶対配置にする*/
+        z-index: 3;
+        top: 42%;
+        cursor: pointer;
+        /*マウスカーソルを指マークに*/
+        outline: none;
+        /*クリックをしたら出てくる枠線を消す*/
+        border-top: 0.3vw solid #000000;
+        /*矢印の色*/
+        border-right: 0.3vw solid #000000;
+        /*矢印の色*/
+        height: 2.5vw;
+        width: 2.5vw;
+      }
+
+      .slick-prev {
+        /*戻る矢印の位置と形状*/
+        left: -45%;
+        transform: rotate(-135deg);
+      }
+
+      .slick-next {
+        /*次へ矢印の位置と形状*/
+        right: -45%;
+        transform: rotate(45deg);
+      }
+    }
+
+    /*選択するサムネイル画像の設定*/
+    .choice-btn {
+      border: max(0.2rem, 0.3vw) solid black;
+      border-radius: 10vw;
+      overflow: hidden;
+
+      li {
+        cursor: pointer;
+        outline: none;
+        background: #333;
+        list-style: none;
+
+      }
+    }
+
+    .choice-btn li img {
+      opacity: 0.4;
+      /*選択されていないものは透過40%*/
+      border: none;
+      border-radius: 0;
+    }
+
+    .choice-btn li.slick-current img {
+      opacity: 1;
+      /*選択されているものは透過しない*/
+    }
+
+    .toaster_3d {
+      margin-left: 1vw;
+      width: 100%;
+      height: 60vh;
+      z-index: 100;
+
+      iframe {
+        border: none;
+      }
+    }
+
+
+  }
+
+}
+
+#news {
+  width: 100vw;
+  background-image: url(../img/background-paper2.png);
+  text-align: center;
+  padding-top: 0vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+
+  .wrapper {
+    margin: 10vw;
+    position: relative;
+
+    .news_decorationTitleR {
+      position: absolute;
+      top: 30%;
+      right: -75.8%;
+      font-size: 10vw;
+      transform: rotate(270deg);
+      -webkit-text-stroke: 1px black;
+      color: rgba(0, 0, 0, 0.1);
+      margin-left: 2rem;
+      z-index: 99;
+    }
+
+    .news_decorationTitleL {
+      position: absolute;
+      top: 30%;
+      left: -80%;
+      font-size: 10vw;
+      transform: rotate(90deg);
+      -webkit-text-stroke: 1px black;
+      color: rgba(0, 0, 0, 0.1);
+      margin-left: 2rem;
+      z-index: 99;
+    }
+
+    .subtitles {
+      height: 10vw;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: max(15rem, 15vw);
+      margin: 0 auto;
+
+      .subtitle {
+        font-weight: bold;
+        font-size: max(2rem, 5vw);
+      }
+
+      .underline_japanese {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        display: flex;
+        margin-top: max(-2rem, -1.5vw);
+
+        .underline {
+          background-color: black;
+          width: 100%;
+          height: max(0.3rem, 0.5vw);
+          border-radius: 100vw;
+          display: block;
+        }
+
+        .japanese {
+          font-size: max(1rem, 1.5vw);
+          font-weight: bold;
+          white-space: nowrap;
+          margin: auto max(0.5rem, 0.5vw);
+          width: 100%;
+        }
+      }
+
+
+      p {
+        margin: 0 0.5vw;
+        white-space: nowrap;
+      }
+    }
+
+    .newss {
+      width: 45vw;
+
+      li {
+        list-style: none;
+        margin: 2vw 0;
+        border-bottom: 0.2vw solid black;
+        text-align: left;
+        line-height: 1.6vw;
+
+        a {
+          display: flex;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          font-size: 1.3vw;
+          font-weight: bold;
+          text-decoration: none;
+          color: black;
+          margin-bottom: 0.5vw;
+
+          .news_title {
+            display: block;
+            width: 65%;
+          }
+
+          .date {
+            display: block;
+            white-space: nowrap;
+            margin-left: max(1rem, 1vw);
+            height: 100%;
+            width: max(5rem, 35%);
+            text-align: right;
+
+
+            .date_time {
+              border-right: 0.2vw solid black;
+              padding-right: 0.5vw;
+              height: 100%;
+            }
+          }
+        }
+
+      }
+    }
+
+    .allNews {
+      margin-top: 1.5vw;
+      width: 10vw;
+      transition: 0.2s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+    }
+
+  }
+}
+
+#sale {
+  padding: 7vw;
+  overflow-x: hidden;
+
+  .wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-right: -7vw;
+
+    div {
+      z-index: 2;
+
+      span {
+        text-align: left;
+        display: block;
+        font-size: 3vw;
+        font-weight: bold;
+      }
+
+      .menuMailOrder {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        font-size: 2vw;
+        font-weight: bold;
+        margin-top: 2vw;
+
+        a {
+          display: flex;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+          align-items: center;
+          border: max(0.2rem, 0.3vw) solid black;
+          border-radius: 100rem;
+          padding: 0 2vw 0.2vw;
+          margin-right: 1rem;
+          text-decoration: none;
+          color: black;
+          cursor: pointer;
+          min-height: 3.5rem;
+          height: 3.5vw;
+          transition: 0.2s;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+
+          img {
+            width: 2.5vw;
+          }
+        }
+      }
+    }
+
+    .toaster_up {
+      z-index: 1;
+      width: 50vw;
+      margin-left: -7vw;
+    }
+  }
+}

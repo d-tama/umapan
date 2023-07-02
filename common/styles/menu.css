@@ -1,0 +1,311 @@
+html {
+  background: #e8dcd1;
+}
+
+body {
+  opacity: 0;
+  animation: fade 1s ease-in forwards;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+body {
+  overflow-x: hidden;
+}
+body.active {
+  overflow: hidden;
+}
+
+.menuBlur {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  transition: 0.5s;
+}
+.menuBlur.active {
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: 0.5s;
+  pointer-events: auto;
+}
+.menuBlur #enclosure {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: max(0.2rem, 0.2vw) solid black;
+  height: 95vh;
+  width: 100vw;
+  border-radius: 1vw;
+  padding: 1vw;
+  margin: max(2rem, 2vw);
+}
+.menuBlur #enclosure .menuContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size: max(1rem, 1vw);
+  line-height: 0.9;
+}
+
+.menu {
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  opacity: 0;
+  display: block;
+  visibility: hidden;
+  transition: all 0.5s ease-in;
+}
+.menu.active {
+  opacity: 1;
+  visibility: visible;
+  overflow: hidden;
+}
+.menu .menu-container {
+  margin: 0 auto;
+}
+.menu .menu-container .menu-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.menu .menu-container .menu-inner .menu-nav_list {
+  text-align: left;
+  margin-right: 7vw;
+}
+.menu .menu-container .menu-inner .menu-nav_list ul li {
+  list-style: none;
+  margin: 1vw 0;
+  transition: 0.2s;
+}
+.menu .menu-container .menu-inner .menu-nav_list ul li:hover {
+  transform: scale(1.1);
+}
+.menu .menu-container .menu-inner .menu-nav_list ul li a {
+  font-size: 5vw;
+  font-weight: 900;
+  text-decoration: none;
+  color: black;
+}
+.menu .menu-container .menu-inner .menu-aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.menu .menu-container .menu-inner .menu-aside div span {
+  text-align: left;
+  display: block;
+  font-size: 4vw;
+  font-weight: bold;
+}
+.menu .menu-container .menu-inner .menu-aside div .menuMailOrder {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 1vw;
+  font-size: 2.5vw;
+  font-weight: bold;
+}
+.menu .menu-container .menu-inner .menu-aside div .menuMailOrder a {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border: 0.3rem solid black;
+  border-radius: 100rem;
+  padding: 0 2vw 0.3vw;
+  margin-right: 1rem;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.menu .menu-container .menu-inner .menu-aside div .menuMailOrder a:hover {
+  transform: scale(1.1);
+}
+.menu .menu-container .menu-inner .menu-aside div .menuMailOrder a img {
+  width: 2.5vw;
+}
+.menu .menu-container .menu-inner .menu-aside .sns {
+  margin-top: 6rem;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.menu .menu-container .menu-inner .menu-aside .sns a {
+  font-size: 2vw;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.menu .menu-container .menu-inner .menu-aside .sns a:hover {
+  transform: scale(1.1);
+}
+
+#logo {
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+.menu_button, .menu_close, .menu_open {
+  font-size: max(1.5rem, 1.8vw);
+  border: none;
+  background: none;
+  font-weight: 900;
+  transition: 0.2s;
+  z-index: 9999;
+}
+.menu_button:hover, .menu_close:hover, .menu_open:hover {
+  transform: scale(1.2);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.menu_open {
+  display: block;
+  pointer-events: auto;
+  transition: 0.5s;
+}
+.menu_open.active {
+  display: none;
+}
+
+.menu_close {
+  display: none;
+  pointer-events: auto;
+  transition: 0.5s;
+}
+.menu_close.active {
+  display: block;
+}
+
+@keyframes open-menu {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blurAnimation {
+  0% {
+    filter: blur(6px);
+  }
+  100% {
+    filter: blur(6px);
+  }
+}
+@media screen and (max-width: 1025px) {
+  .menuBlur #enclosure {
+    border: none;
+  }
+  .menu .menu-container .menu-inner {
+    flex-direction: column;
+  }
+  .menu .menu-container .menu-inner .menu-nav_list {
+    text-align: center;
+    margin-right: 0;
+  }
+  .menu .menu-container .menu-inner .menu-nav_list ul li {
+    line-height: 8vw;
+    margin: 1vw 0;
+  }
+  .menu .menu-container .menu-inner .menu-nav_list ul li a {
+    font-size: 8vw;
+  }
+  .menu .menu-container .menu-inner .menu-aside div {
+    margin: 2vw 0;
+  }
+  .menu .menu-container .menu-inner .menu-aside div span {
+    display: none;
+  }
+  .menu .menu-container .menu-inner .menu-aside div .menuMailOrder {
+    font-size: 4vw;
+    margin-top: 0vw;
+  }
+  .menu .menu-container .menu-inner .menu-aside div .menuMailOrder a {
+    padding: 0 2vw 0.5vw;
+  }
+  .menu .menu-container .menu-inner .menu-aside div .menuMailOrder a img {
+    width: 6vw;
+  }
+  .menu .menu-container .menu-inner .menu-aside .sns {
+    margin: 0;
+  }
+  .menu .menu-container .menu-inner .menu-aside .sns a {
+    font-size: 3vw;
+  }
+}
+@media screen and (max-width: 600px) {
+  .menuBlur #enclosure {
+    margin: 1rem;
+    border: none;
+  }
+  .menu .menu-container .menu-inner {
+    flex-direction: column;
+  }
+  .menu .menu-container .menu-inner .menu-nav_list {
+    text-align: center;
+    margin-right: 0;
+    margin-top: 10vw;
+  }
+  .menu .menu-container .menu-inner .menu-nav_list ul li {
+    margin: 5vw 0;
+    line-height: 13vw;
+  }
+  .menu .menu-container .menu-inner .menu-nav_list ul li a {
+    font-size: 13vw;
+  }
+  .menu .menu-container .menu-inner .menu-aside div {
+    margin-bottom: 5vw 0;
+  }
+  .menu .menu-container .menu-inner .menu-aside div span {
+    display: none;
+  }
+  .menu .menu-container .menu-inner .menu-aside div .menuMailOrder {
+    font-size: 7vw;
+  }
+  .menu .menu-container .menu-inner .menu-aside div .menuMailOrder a {
+    padding: 0 2vw 1vw;
+    height: 3.5vw;
+    min-height: 3.5rem;
+    height: 3.5vw;
+  }
+  .menu .menu-container .menu-inner .menu-aside div .menuMailOrder a img {
+    width: 7vw;
+    padding-top: 1vw;
+  }
+  .menu .menu-container .menu-inner .menu-aside .sns {
+    margin: 0;
+  }
+  .menu .menu-container .menu-inner .menu-aside .sns a {
+    font-size: 4vw;
+  }
+}/*# sourceMappingURL=menu.css.map */

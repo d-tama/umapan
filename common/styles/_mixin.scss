@@ -1,0 +1,43 @@
+$mainBack: #e8dcd1;
+$subBack: #dbcdbd;
+
+// backdrop-filter: blur;を効かせるための背景色
+html{
+    background: $mainBack;
+}
+
+@mixin input {
+    font-size: max(1rem, 1vw);
+    width: 100%;
+    padding: max(0.3rem,0.3vw);
+    border: max(0.15rem,0.15vw) solid black;
+    background-color: white;
+    color: black;
+    &[type="email"]{
+        color: black !important;
+    }
+    &:focus {
+        border: max(0.2rem,0.2vw) solid black;
+    }
+    &:invalid{
+        color: gray;
+      }
+}
+
+
+// ページ全体をふわっとさせるアニメーション
+body {
+    opacity: 0;
+    animation: fade 1s ease-in forwards;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+// -----------------------------------------

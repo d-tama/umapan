@@ -1,0 +1,225 @@
+@import "_reset";
+@import "_mixin";
+
+body {
+  background-color: $mainBack;
+  background-image: url(../img/background-paper.png);
+}
+
+.container {
+  .wrapper {
+    margin: 0 auto;
+    padding: max(5rem, 5vw) 0;
+    width: 35%;
+
+    h2 {
+      font-size: max(2.5rem, 3.5vw);
+      font-weight: bold;
+      padding: max(2rem, 2vw) 0;
+      text-align: center;
+    }
+
+    .inner {
+      margin: 0 auto;
+      width: 100%;
+      background-color: rgb(232, 226, 223);
+      // box-shadow: 0 0 1.5rem white;
+      border: max(0.2rem, 0.2vw) solid black;
+      border-radius: max(1rem, 1vw);
+      padding: max(1rem, 1vw) 0;
+    }
+  }
+}
+
+form {
+  padding: 0 max(2rem, 3vw);
+  width: 100%;
+  margin: 0 auto;
+
+  dl {
+    margin-top: max(2rem, 2vw);
+
+    dt {
+
+      label {
+        text-align: left;
+        font-size: max(1.5rem, 1.5vw);
+        font-weight: 700;
+      }
+    }
+
+    dd {
+
+      input {
+        @include input;
+      }
+
+      .mailAddress {
+        color: black;
+      }
+
+      .name {
+        display: flex;
+        justify-content: space-between;
+
+        input {
+          width: 49.5%;
+        }
+      }
+
+      textarea {
+        @include input;
+        height: max(15rem, 15vw);
+        resize: vertical
+      }
+
+      p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: max(1rem, 1vw);
+
+        input[type=checkbox] {
+          margin: 0;
+          padding: 0;
+          background: none;
+          border: none;
+          border-radius: 0;
+          outline: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          width: auto;
+          // margin: max(1rem,1vw) max(0.2rem,0.2vw) max(1rem,1vw) 0;
+          cursor: pointer;
+          padding-left: max(2rem, 2vw);
+          /*label手前にチェックボックス用の余白を開ける*/
+          vertical-align: middle;
+          position: relative;
+
+          &::before,
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+          }
+
+          &::before {
+            background-color: #fff;
+            border-radius: 0%;
+            border: max(0.2rem, 0.2vw) solid #000000;
+            width: max(2rem, 2vw);
+            /*チェックボックスの横幅*/
+            height: max(2rem, 2vw);
+            /*チェックボックスの縦幅*/
+            transform: translateY(-50%);
+            top: 50%;
+            left: -20%;
+          }
+
+          &::after {
+            border-bottom: max(0.45rem, 0.45vw) solid #000000;
+            /*チェックの太さ*/
+            border-left: max(0.45rem, 0.45vw) solid #000000;
+            /*チェックの太さ*/
+            opacity: 0;
+            /*チェック前は非表示*/
+            height: max(1rem, 1vw);
+            /*チェックの高さ*/
+            width: max(1.2rem, 1.2vw);
+            /*チェックの横幅*/
+            transform: rotate(-45deg) translateX(-25%) translateY(-135%);
+            top: 50%;
+            /*チェック時の位置調整*/
+            left: 60%;
+            /*チェック時の位置調整*/
+          }
+
+          &:checked::after {
+            opacity: 1;
+            /*チェック後表示*/
+          }
+        }
+      }
+
+      .checkboxs {
+        margin-top: max(2rem,2vw);
+        font-weight: bold
+      }
+
+    }
+
+    select {
+      @include input;
+
+      option {
+        color: black;
+
+        &:first-child {
+          color: #bbb;
+        }
+      }
+    }
+  }
+
+  button {
+    display: block;
+    margin: max(2rem, 2vw) auto;
+    font-size: max(1.7rem, 1.7vw);
+    font-weight: bold;
+    border-radius: 100px;
+    border: none;
+    width: 100%;
+    max-width: 300px;
+    background-color: rgb(255, 103, 47);
+    box-shadow: 0 max(0.2rem, 0.2vw) 0 0 black;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border: max(0.2rem, 0.2vw) solid black;
+    transition: all 0.2s;
+
+    &:hover,
+    &:active {
+      box-shadow: 0 0 0 0 black;
+      transform: translateY(max(0.2rem, 0.2vw));
+    }
+  }
+}
+
+
+.privacy-policy {
+  @include input;
+  text-align: left;
+  height: 300px;
+  overflow: scroll;
+  padding: 25px;
+  background-color: white;
+  line-height: 2;
+  // 下のスクロールバー削除
+  overflow-x: hidden;
+
+  &__item {
+    p {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+@media screen and (max-width:1025px) {
+  .container {
+    .wrapper {
+      width: 65%;
+    }
+  }
+
+}
+
+@media screen and (max-width:600px) {
+  .container {
+    .wrapper {
+      width: 90%;
+    }
+  }
+
+}

@@ -1,0 +1,204 @@
+@charset "UTF-8";
+@import "_reset";
+@import "_mixin";
+
+body {
+    background-color: $mainBack;
+    background-image: url(../img/background-paper.png);
+    z-index: 10;
+    letter-spacing: 0.1rem;
+    counter-reset: number 0;  /* number のカウンタを 0 にセット */
+    width: 100vw;
+}
+
+.recipe{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    .wrapper {
+        width: 100%;
+        height: 100%;
+        padding: max(3rem,5vw) max(3rem,3vw);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+    .recipe_texts_space{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .recipe_texts{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: max(2rem,2vw) max(1rem,1vw);
+        width: 70%;
+    
+        .material_space,
+        .material_space{
+            width: 100%;
+        }
+        .material_space,{
+            margin-bottom: max(1rem,1vw);
+        }
+    
+    
+        h1{
+            display: inline-block;
+            font-size: max(2.5rem,3vw);
+            font-weight: bold;
+            background: linear-gradient(transparent 85%, black 30%);
+            padding-bottom: max(0.5rem,0.5vw);
+            margin: max(2rem,2vw) auto;
+        }
+        h2{
+            font-size: max(1.5rem,1.5vw);
+            font-weight: bold;
+            border-left: max(0.5rem,0.5vw) solid black;
+            margin: max(1rem,1vw) 0 max(1rem,1vw) 0;
+            padding-left: max(0.3rem,0.3vw);
+        }
+        .step_titles{
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+            font-size: max(1rem,1vw);
+            font-weight: bold;
+            border-bottom: max(0.15rem,0.15vw) solid black;
+            margin-bottom: max(0.5rem,0.5vw);
+        }
+        .step_number{
+            &::before{
+                counter-increment: number 1;      /* number カウンタを増加 */
+                content: ""counter(number)".";      /* 表示形式を指定 */
+    
+            }
+        }
+        p{
+            font-size: max(1rem,1vw);
+        }
+        
+        ul{
+            columns: max(10rem,10vw) auto;
+            column-rule: solid max(0.1rem,0.1vw) black;
+            column-gap: max(2.5rem,2.5vw);
+            width: 100%;
+        }
+        
+        li{
+            font-size: max(1rem,1vw);
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: max(0.15rem,0.15vw) solid black;
+            padding-top: max(0.3rem,0.3vw);
+            margin-bottom: max(0.3rem,0.3vw);
+        }
+        .steps{
+            columns: max(10rem,10vw) auto;
+            column-rule: solid max(0.1rem,0.1vw) black;
+            column-gap: max(2.5rem,2.5vw);
+            width: 100%;
+        }
+        .step{
+            margin-bottom: max(0.5rem,0.5vw);
+            display: block;
+            page-break-inside: avoid;
+            break-inside: avoid;
+            // background-color: aquamarine;
+        }
+    }
+    
+    
+    .recipe_img_space{
+        width: 100%;
+        height: 100%;
+        .recipe_img_frame{
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+    
+        img{
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            object-fit: cover;
+            width: 35vw;
+            height: 35vw;
+            border-radius: max(5rem,7vw) max(5rem,7vw) max(1.5rem,2vw) max(1.5rem,2vw);
+            border: max(0.2rem,0.2vw) solid black;
+        }
+    }
+
+}
+
+@media screen and (max-width:1025px){
+    .recipe{
+        flex-wrap: wrap;
+        .wrapper {
+            order: 2;
+            padding: 0;
+            padding-bottom: max(3rem, 3vw);
+            
+        }
+    
+        .recipe_texts{
+            padding: 0;
+            width: 70%;
+        }
+        
+        .recipe_img_space{
+            order: 1;
+            // display: none;
+            margin-top: max(7rem,7vw);
+            .recipe_img_frame{
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+            }
+        
+            img{
+                position:static;
+                transform: none;
+                width: 50vw;
+                height: 55vw;
+            }
+        }
+        .recipe_img_space{
+            img{
+                border-radius: max(3rem,13vw) max(3rem,13vw) max(1rem,2vw) max(1rem,2vw);
+            }
+        }
+    }    
+}
+
+@media screen and (max-width:600px){
+    .recipe{
+        .recipe_texts{
+            h1{
+                font-size: 9vw;
+                padding-bottom: 2vw;
+                background: linear-gradient(transparent 80%, black 30%);
+            }
+        }
+        .recipe_img_space{
+            img{
+                border-radius: max(3rem,13vw) max(3rem,13vw) max(1rem,2vw) max(1rem,2vw);
+                width: 70vw;
+                height: 75vw;
+            }
+        }
+    } 
+}

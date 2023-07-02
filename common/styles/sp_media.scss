@@ -1,0 +1,442 @@
+@import "_mixin";
+
+@media screen and (max-width:600px) {
+
+    .sp_br {
+        display: block;
+    }
+
+
+    #top-img {
+        height: 100svh;
+        margin-top: -20vw;
+    }
+
+    #ScrollDown {
+        right: 45%;
+        height: 25vw;
+    }
+
+
+
+    #about {
+        padding: 20vw 10vw;
+        flex-direction: column-reverse;
+
+        .texts {
+            margin: 0 auto;
+
+            h1 {
+                margin-top: 10vw;
+                font-size: 10vw;
+            }
+
+            p {
+                margin-top: 5vw;
+                font-size: 4.5vw;
+                white-space: nowrap;
+            }
+        }
+
+        div {
+            .eat_illustration {
+                img {
+                    width: 80vw;
+                }
+            }
+        }
+    }
+
+
+    #steamHeating {
+        height: auto;
+        padding: 20vw 0 30vw;
+        overflow: hidden;
+
+        .subTitle {
+            position: static;
+            margin: 0 auto;
+            width: 69%;
+            padding-bottom: 0;
+
+            div {
+
+                text-align: center;
+
+                h1 {
+                    font-size: 11vw;
+                    white-space: nowrap;
+                }
+
+                span {
+                    width: 100%;
+                    margin: 0 auto;
+                }
+            }
+
+            p {
+                width: 100%;
+                font-size: 4vw;
+                margin-top: 5vw;
+
+            }
+
+            .steam {
+                position: static;
+                transform: scale(200%);
+                margin-top: 20vw;
+                padding-left: 2vw;
+            }
+
+            .steamToast {
+                display: none;
+            }
+
+        }
+    }
+
+
+    #recipeList {
+        padding: 10vw 0 30vw;
+        height: max(50rem, 120vh);
+
+        .wrapper {
+
+            .recipe_decorationTitleR {
+                display: none;
+            }
+
+            .recipe_decorationTitleL {
+                display: none;
+            }
+
+            .subtitles {
+                width: 60.3vw;
+                margin-top: 9vw;
+                margin-bottom: 9vw;
+
+                .subtitle {
+                    font-size: 17vw;
+                }
+
+                .underline_japanese {
+                    .underline {
+                        height: max(0.5rem, 0.5vw);
+                    }
+
+                    .japanese {
+                        font-size: 5vw;
+                    }
+                }
+
+            }
+
+        }
+
+        a .allRecipe {
+            top: 82%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50vw;
+            &:hover {
+                transform: translateX(-50%) scale(1.1);
+              }
+        }
+
+    }
+
+
+    /*==================================================
+           スライダーのためのcss
+           ===================================*/
+    .slider {
+        /*横幅94%で左右に余白を持たせて中央寄せ*/
+        margin: 5vw auto;
+
+        a {
+            height: 100%;
+            font-size: 6vw;
+            margin-top: 2vw;
+        }
+    }
+
+    .slider img {
+        margin-top: 5vw;
+        margin-bottom: 1vw;
+        width: 60vw;
+        /*スライダー内の画像を60vwにしてレスポンシブ化*/
+        border-radius: 10vw 10vw 2vw 2vw;
+    }
+
+
+    /*戻る、次へ矢印の位置*/
+    .slick-prev,
+    .slick-next {
+        border-top: 2vw solid black;
+        /*矢印の色*/
+        border-right: 2vw solid black;
+        /*矢印の色*/
+        height: 8vw;
+        width: 8vw;
+
+        margin: 0 5vw;
+    }
+
+    .slick-prev {
+        /*戻る矢印の位置と形状*/
+        left: -1%;
+    }
+
+    .slick-next {
+        /*次へ矢印の位置と形状*/
+        right: -1%;
+    }
+
+    /*ドットナビゲーションの設定*/
+
+    .slick-dots {
+
+        margin: 5vw 0 0 0;
+    }
+
+    .slick-dots button {
+        border: 0.1rem solid black;
+    }
+
+
+
+    .design {
+        .wrapper {
+            position: relative;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20vw 0 25vw;
+
+            .decorationTitleTop {
+                display: none;
+            }
+
+            .decorationTitleBottom {
+                display: none;
+            }
+            .subtitles {
+                width: 60.3vw;
+                margin-top: 9vw;
+                margin-bottom: 15vw;
+
+                .subtitle {
+                    font-size: 17vw;
+                }
+
+                .underline_japanese {
+                    .underline {
+                        height: max(0.5rem, 0.5vw);
+                    }
+
+                    .japanese {
+                        font-size: 5vw;
+                    }
+                }
+
+            }
+
+            p {
+                font-size: 4vw;
+                margin-top: 3vw;
+                width: 80%;
+                margin: 0 auto;
+            }
+
+
+            .design_slide {
+                margin-left: 0;
+                width: 90%;
+                margin-top: 7vw;
+
+                /*画像の横幅を100%にしてレスポンシブ化*/
+                img {
+                    border: max(0.2rem, 0.3vw) solid black;
+                    border-radius: 2vw;
+                    /*画像の下にできる余白を削除*/
+                }
+
+                /*メイン画像下に余白をつける*/
+                .gallery {
+                    margin: 0 0 3vw 0;
+
+                }
+
+                /*矢印の設定*/
+
+                /*戻る、次へ矢印の位置*/
+                .slick-prev,
+                .slick-next {
+                    position: absolute;
+                    /*絶対配置にする*/
+                    z-index: 3;
+                    top: 42%;
+                    cursor: pointer;
+                    /*マウスカーソルを指マークに*/
+                    border-top: max(0.3rem, 0.3vw) solid #000000;
+                    /*矢印の色*/
+                    border-right: max(0.3rem, 0.3vw) solid #000000;
+                    /*矢印の色*/
+                    height: 7vw;
+                    width: 7vw;
+                }
+
+                .slick-prev {
+                    /*戻る矢印の位置と形状*/
+                    left: -15%;
+                }
+
+                .slick-next {
+                    /*次へ矢印の位置と形状*/
+                    right: -15%;
+                }
+            }
+
+            /*選択するサムネイル画像の設定*/
+            .choice-btn {
+                border-radius: 10vw;
+            }
+
+            .choice-btn li img {
+                opacity: 0.4;
+                /*選択されていないものは透過40%*/
+                border: none;
+                border-radius: 0;
+            }
+
+
+        }
+
+    }
+
+    #news {
+        padding: 10vw 0;
+
+        .wrapper {
+            margin: 10vw;
+
+            .decorationTitleR {
+                display: none;
+            }
+
+            .decorationTitleL {
+                display: none;
+            }
+
+            .subtitles {
+                width: 60.3vw;
+                margin-top: 9vw;
+                margin-bottom: 20vw;
+
+                .subtitle {
+                    font-size: 17vw;
+                }
+
+                .underline_japanese {
+                    .underline {
+                        height: max(0.5rem, 0.5vw);
+                    }
+
+                    .japanese {
+                        font-size: 5vw;
+                    }
+                }
+
+            }
+
+            .newss {
+                width: 80vw;
+                margin: 10vw 0;
+
+                li {
+                    margin: 6vw 0;
+                    border-bottom: 0.7vw solid black;
+
+                    a {
+                        display: flex;
+                        flex-wrap: nowrap;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+                        font-size: 4vw;
+                        line-height: 5vw;
+                        margin-bottom: 2vw;
+
+                        .news_title {
+                            width: 60%;
+                        }
+
+                        .date {
+                            border-left: 0.7vw solid black;
+                            width: 40%;
+                            height: 100%;
+                            padding-left: 1vw;
+                            text-align: left;
+                            white-space: normal;
+
+                            .date_time {
+                                border-right: none;
+                                padding-right: 0;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .allNews {
+                margin-top: 1.5vw;
+                width: 60%;
+                transition: 0.2s;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+
+            }
+
+        }
+    }
+
+    #sale {
+        padding: 20vw 0;
+
+        .wrapper {
+            flex-direction: column;
+            margin-right: 0;
+
+            div {
+                span {
+                    text-align: left;
+                    display: block;
+                    font-size: 7vw;
+                    font-weight: bold;
+                }
+
+                .menuMailOrder {
+                    font-size: 6vw;
+
+                    a {
+                        margin-right: 0;
+                        min-height: 3rem;
+
+                        img {
+                            width: 6vw;
+                        }
+                    }
+                }
+            }
+
+            .toaster_up {
+                width: 90vw;
+                margin-left: 0;
+                margin-top: 15vw;
+            }
+        }
+    }
+}

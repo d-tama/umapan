@@ -1,0 +1,34 @@
+@import "_mixin";
+
+@media screen and (max-width:1025px) {
+    #top-img {
+        background-image: url(../img/front-toaster_sp.png);
+        background-size: 65%;
+        height:100svh;
+    }
+
+    #ScrollDown {
+        right: 5vw;
+    }
+
+
+    #news {
+        .wrapper {
+
+            .decorationTitleR {
+                right: -60%;
+            }
+
+            .decorationTitleL {
+                right: 60%;
+            }
+
+            .newss {
+                width: 55vw;
+            }
+        }
+    }
+
+
+
+}

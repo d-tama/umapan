@@ -1,0 +1,40 @@
+@import "_mixin";
+
+#header {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  margin: 0 auto;
+  pointer-events:none;
+}
+
+
+
+#logo {
+  width: max(7rem, 9vw);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+#top-img {
+  background-image: url(../img/front-toaster.png);
+  height: 100vh;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: 75%;
+  background-position: center;
+  position: relative
+}
+
+#ScrollDown{
+  position: absolute;
+  right: max(2.5rem,2.5vw);
+  bottom: max(2.5rem,2.5vw);
+  height: max(10rem,10vw);
+}

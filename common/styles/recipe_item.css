@@ -1,0 +1,227 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lexend Tera", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
+  box-sizing: border-box;
+  color: black;
+}
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+  background-color: black;
+}
+
+::-webkit-scrollbar-track {
+  opacity: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #E2DDD8;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border-right: 5em;
+  border-left: 0.13vw solid black;
+}
+
+@media screen and (max-width: 1000px) {
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+}
+html {
+  background: #e8dcd1;
+}
+
+body {
+  opacity: 0;
+  animation: fade 1s ease-in forwards;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+body {
+  background-color: #e8dcd1;
+  background-image: url(../img/background-paper.png);
+  z-index: 10;
+  letter-spacing: 0.1rem;
+  counter-reset: number 0; /* number のカウンタを 0 にセット */
+  width: 100vw;
+}
+
+.recipe {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.recipe .wrapper {
+  width: 100%;
+  height: 100%;
+  padding: max(3rem, 5vw) max(3rem, 3vw);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.recipe .recipe_texts_space {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.recipe .recipe_texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: max(2rem, 2vw) max(1rem, 1vw);
+  width: 70%;
+}
+.recipe .recipe_texts .material_space,
+.recipe .recipe_texts .material_space {
+  width: 100%;
+}
+.recipe .recipe_texts .material_space {
+  margin-bottom: max(1rem, 1vw);
+}
+.recipe .recipe_texts h1 {
+  display: inline-block;
+  font-size: max(2.5rem, 3vw);
+  font-weight: bold;
+  background: linear-gradient(transparent 85%, black 30%);
+  padding-bottom: max(0.5rem, 0.5vw);
+  margin: max(2rem, 2vw) auto;
+}
+.recipe .recipe_texts h2 {
+  font-size: max(1.5rem, 1.5vw);
+  font-weight: bold;
+  border-left: max(0.5rem, 0.5vw) solid black;
+  margin: max(1rem, 1vw) 0 max(1rem, 1vw) 0;
+  padding-left: max(0.3rem, 0.3vw);
+}
+.recipe .recipe_texts .step_titles {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  font-size: max(1rem, 1vw);
+  font-weight: bold;
+  border-bottom: max(0.15rem, 0.15vw) solid black;
+  margin-bottom: max(0.5rem, 0.5vw);
+}
+.recipe .recipe_texts .step_number::before {
+  counter-increment: number 1; /* number カウンタを増加 */
+  content: "" counter(number) "."; /* 表示形式を指定 */
+}
+.recipe .recipe_texts p {
+  font-size: max(1rem, 1vw);
+}
+.recipe .recipe_texts ul {
+  -moz-columns: max(10rem, 10vw) auto;
+       columns: max(10rem, 10vw) auto;
+  -moz-column-rule: solid max(0.1rem, 0.1vw) black;
+       column-rule: solid max(0.1rem, 0.1vw) black;
+  -moz-column-gap: max(2.5rem, 2.5vw);
+       column-gap: max(2.5rem, 2.5vw);
+  width: 100%;
+}
+.recipe .recipe_texts li {
+  font-size: max(1rem, 1vw);
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: max(0.15rem, 0.15vw) solid black;
+  padding-top: max(0.3rem, 0.3vw);
+  margin-bottom: max(0.3rem, 0.3vw);
+}
+.recipe .recipe_texts .steps {
+  -moz-columns: max(10rem, 10vw) auto;
+       columns: max(10rem, 10vw) auto;
+  -moz-column-rule: solid max(0.1rem, 0.1vw) black;
+       column-rule: solid max(0.1rem, 0.1vw) black;
+  -moz-column-gap: max(2.5rem, 2.5vw);
+       column-gap: max(2.5rem, 2.5vw);
+  width: 100%;
+}
+.recipe .recipe_texts .step {
+  margin-bottom: max(0.5rem, 0.5vw);
+  display: block;
+  page-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
+}
+.recipe .recipe_img_space {
+  width: 100%;
+  height: 100%;
+}
+.recipe .recipe_img_space .recipe_img_frame {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.recipe .recipe_img_space img {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 35vw;
+  height: 35vw;
+  border-radius: max(5rem, 7vw) max(5rem, 7vw) max(1.5rem, 2vw) max(1.5rem, 2vw);
+  border: max(0.2rem, 0.2vw) solid black;
+}
+
+@media screen and (max-width: 1025px) {
+  .recipe {
+    flex-wrap: wrap;
+  }
+  .recipe .wrapper {
+    order: 2;
+    padding: 0;
+    padding-bottom: max(3rem, 3vw);
+  }
+  .recipe .recipe_texts {
+    padding: 0;
+    width: 70%;
+  }
+  .recipe .recipe_img_space {
+    order: 1;
+    margin-top: max(7rem, 7vw);
+  }
+  .recipe .recipe_img_space .recipe_img_frame {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+  .recipe .recipe_img_space img {
+    position: static;
+    transform: none;
+    width: 50vw;
+    height: 55vw;
+  }
+  .recipe .recipe_img_space img {
+    border-radius: max(3rem, 13vw) max(3rem, 13vw) max(1rem, 2vw) max(1rem, 2vw);
+  }
+}
+@media screen and (max-width: 600px) {
+  .recipe .recipe_texts h1 {
+    font-size: 9vw;
+    padding-bottom: 2vw;
+    background: linear-gradient(transparent 80%, black 30%);
+  }
+  .recipe .recipe_img_space img {
+    border-radius: max(3rem, 13vw) max(3rem, 13vw) max(1rem, 2vw) max(1rem, 2vw);
+    width: 70vw;
+    height: 75vw;
+  }
+}/*# sourceMappingURL=recipe_item.css.map */

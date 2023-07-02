@@ -1,0 +1,281 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lexend Tera", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
+  box-sizing: border-box;
+  color: black;
+}
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+  background-color: black;
+}
+
+::-webkit-scrollbar-track {
+  opacity: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #E2DDD8;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border-right: 5em;
+  border-left: 0.13vw solid black;
+}
+
+@media screen and (max-width: 1000px) {
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+}
+html {
+  background: #e8dcd1;
+}
+
+body {
+  opacity: 0;
+  animation: fade 1s ease-in forwards;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+body {
+  background-color: #e8dcd1;
+  background-image: url(../img/background-paper.png);
+}
+
+.container .wrapper {
+  margin: 0 auto;
+  padding: max(5rem, 5vw) 0;
+  width: 35%;
+}
+.container .wrapper h2 {
+  font-size: max(2.5rem, 3.5vw);
+  font-weight: bold;
+  padding: max(2rem, 2vw) 0;
+  text-align: center;
+}
+.container .wrapper .inner {
+  margin: 0 auto;
+  width: 100%;
+  background-color: rgb(232, 226, 223);
+  border: max(0.2rem, 0.2vw) solid black;
+  border-radius: max(1rem, 1vw);
+  padding: max(1rem, 1vw) 0;
+}
+
+form {
+  padding: 0 max(2rem, 3vw);
+  width: 100%;
+  margin: 0 auto;
+}
+form dl {
+  margin-top: max(2rem, 2vw);
+}
+form dl dt label {
+  text-align: left;
+  font-size: max(1.5rem, 1.5vw);
+  font-weight: 700;
+}
+form dl dd input {
+  font-size: max(1rem, 1vw);
+  width: 100%;
+  padding: max(0.3rem, 0.3vw);
+  border: max(0.15rem, 0.15vw) solid black;
+  background-color: white;
+  color: black;
+}
+form dl dd input[type=email] {
+  color: black !important;
+}
+form dl dd input:focus {
+  border: max(0.2rem, 0.2vw) solid black;
+}
+form dl dd input:invalid {
+  color: gray;
+}
+form dl dd .mailAddress {
+  color: black;
+}
+form dl dd .name {
+  display: flex;
+  justify-content: space-between;
+}
+form dl dd .name input {
+  width: 49.5%;
+}
+form dl dd textarea {
+  font-size: max(1rem, 1vw);
+  width: 100%;
+  padding: max(0.3rem, 0.3vw);
+  border: max(0.15rem, 0.15vw) solid black;
+  background-color: white;
+  color: black;
+  height: max(15rem, 15vw);
+  resize: vertical;
+}
+form dl dd textarea[type=email] {
+  color: black !important;
+}
+form dl dd textarea:focus {
+  border: max(0.2rem, 0.2vw) solid black;
+}
+form dl dd textarea:invalid {
+  color: gray;
+}
+form dl dd p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: max(1rem, 1vw);
+}
+form dl dd p input[type=checkbox] {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: auto;
+  cursor: pointer;
+  padding-left: max(2rem, 2vw);
+  /*label手前にチェックボックス用の余白を開ける*/
+  vertical-align: middle;
+  position: relative;
+}
+form dl dd p input[type=checkbox]::before, form dl dd p input[type=checkbox]::after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+form dl dd p input[type=checkbox]::before {
+  background-color: #fff;
+  border-radius: 0%;
+  border: max(0.2rem, 0.2vw) solid #000000;
+  width: max(2rem, 2vw);
+  /*チェックボックスの横幅*/
+  height: max(2rem, 2vw);
+  /*チェックボックスの縦幅*/
+  transform: translateY(-50%);
+  top: 50%;
+  left: -20%;
+}
+form dl dd p input[type=checkbox]::after {
+  border-bottom: max(0.45rem, 0.45vw) solid #000000;
+  /*チェックの太さ*/
+  border-left: max(0.45rem, 0.45vw) solid #000000;
+  /*チェックの太さ*/
+  opacity: 0;
+  /*チェック前は非表示*/
+  height: max(1rem, 1vw);
+  /*チェックの高さ*/
+  width: max(1.2rem, 1.2vw);
+  /*チェックの横幅*/
+  transform: rotate(-45deg) translateX(-25%) translateY(-135%);
+  top: 50%;
+  /*チェック時の位置調整*/
+  left: 60%;
+  /*チェック時の位置調整*/
+}
+form dl dd p input[type=checkbox]:checked::after {
+  opacity: 1;
+  /*チェック後表示*/
+}
+form dl dd .checkboxs {
+  margin-top: max(2rem, 2vw);
+  font-weight: bold;
+}
+form dl select {
+  font-size: max(1rem, 1vw);
+  width: 100%;
+  padding: max(0.3rem, 0.3vw);
+  border: max(0.15rem, 0.15vw) solid black;
+  background-color: white;
+  color: black;
+}
+form dl select[type=email] {
+  color: black !important;
+}
+form dl select:focus {
+  border: max(0.2rem, 0.2vw) solid black;
+}
+form dl select:invalid {
+  color: gray;
+}
+form dl select option {
+  color: black;
+}
+form dl select option:first-child {
+  color: #bbb;
+}
+form button {
+  display: block;
+  margin: max(2rem, 2vw) auto;
+  font-size: max(1.7rem, 1.7vw);
+  font-weight: bold;
+  border-radius: 100px;
+  border: none;
+  width: 100%;
+  max-width: 300px;
+  background-color: rgb(255, 103, 47);
+  box-shadow: 0 max(0.2rem, 0.2vw) 0 0 black;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  border: max(0.2rem, 0.2vw) solid black;
+  transition: all 0.2s;
+}
+form button:hover, form button:active {
+  box-shadow: 0 0 0 0 black;
+  transform: translateY(max(0.2rem, 0.2vw));
+}
+
+.privacy-policy {
+  font-size: max(1rem, 1vw);
+  width: 100%;
+  padding: max(0.3rem, 0.3vw);
+  border: max(0.15rem, 0.15vw) solid black;
+  background-color: white;
+  color: black;
+  text-align: left;
+  height: 300px;
+  overflow: scroll;
+  padding: 25px;
+  background-color: white;
+  line-height: 2;
+  overflow-x: hidden;
+}
+.privacy-policy[type=email] {
+  color: black !important;
+}
+.privacy-policy:focus {
+  border: max(0.2rem, 0.2vw) solid black;
+}
+.privacy-policy:invalid {
+  color: gray;
+}
+.privacy-policy__item p {
+  margin-bottom: 25px;
+}
+
+@media screen and (max-width: 1025px) {
+  .container .wrapper {
+    width: 65%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container .wrapper {
+    width: 90%;
+  }
+}/*# sourceMappingURL=form.css.map */
