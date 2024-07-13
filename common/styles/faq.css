@@ -48,7 +48,7 @@ body {
 }
 body {
   background-color: #e8dcd1;
-  background-image: url(../img/background-paper.png);
+  background-image: url(../img/background-paper.webp);
   z-index: 10;
   letter-spacing: 0.1rem;
   overflow-x: hidden;

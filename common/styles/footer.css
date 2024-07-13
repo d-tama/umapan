@@ -45,7 +45,7 @@ footer .wrapper .copyright {
 @media screen and (max-width: 1025px) {
   footer {
     background-color: #dbcdbd;
-    background-image: url(../img/background-paper2.png);
+    background-image: url(../img/background-paper2.webp);
   }
   footer .wrapper {
     padding: 2vw;
@@ -54,7 +54,7 @@ footer .wrapper .copyright {
 @media screen and (max-width: 600px) {
   footer {
     background-color: #dbcdbd;
-    background-image: url(../img/background-paper2.png);
+    background-image: url(../img/background-paper2.webp);
   }
   footer .wrapper {
     flex-direction: column;

@@ -9,7 +9,7 @@ html {
 
 body {
   background-color: $mainBack;
-  background-image: url(../img/background-paper.png);
+  background-image: url(../img/background-paper.webp);
   z-index: 10;
   letter-spacing: 0.1rem;
 }
@@ -24,7 +24,7 @@ h1 {
 
 #about {
   padding: 10vw 10vw;
-  background-image: url(../img/background-paper2.png);
+  background-image: url(../img/background-paper2.webp);
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
@@ -123,7 +123,7 @@ h1 {
 
 #recipeList {
   width: 100vw;
-  background-image: url(../img/background-paper2.png);
+  background-image: url(../img/background-paper2.webp);
   text-align: center;
   padding-top: 0vw;
   position: relative;
@@ -569,7 +569,7 @@ h1 {
 
 #news {
   width: 100vw;
-  background-image: url(../img/background-paper2.png);
+  background-image: url(../img/background-paper2.webp);
   text-align: center;
   padding-top: 0vw;
   overflow: hidden;
